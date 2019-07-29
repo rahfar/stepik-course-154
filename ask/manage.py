@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/farid/pythonenv/bin python
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
