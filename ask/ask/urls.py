@@ -19,7 +19,7 @@ from qa.views import test
 urlpatterns = [
     path('', test),
     path('login/', test),
-    path('signup', test),
+    path('signup/', test),
     path('question/<int:qnum>', test),
     path('ask/', test),
     path('popular/', test),
