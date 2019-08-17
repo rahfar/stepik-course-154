@@ -1,2 +1,0 @@
-# servers start
-# servers stop
