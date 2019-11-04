@@ -1,0 +1,6 @@
+.vscode/
+__pycache__/
+*.sqlite3
+*.log
+py3.7/
+.idea/
