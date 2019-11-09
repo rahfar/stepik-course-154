@@ -4,3 +4,4 @@ __pycache__/
 *.log
 py3.7/
 .idea/
+ask/qa/migrations/
