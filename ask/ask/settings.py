@@ -75,9 +75,11 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 # 'mysql.connector.django'
+# 'django.db.backends.mysql'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'mydb',
         'USER': 'box',
         'PASSWORD': 'Ab123456'
