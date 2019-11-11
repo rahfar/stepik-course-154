@@ -9,16 +9,16 @@ class QuestionManager(models.Manager):
         return self.order_by('-rating')
 
 class Question(models.Model):
-    title = models.CharField(max_length=255) # - заголовок вопроса
-    text = models.TextField() # - полный текст вопроса
-    added_at = models.DateTimeField(auto_now_add=True) # - дата добавления вопроса
-    rating = models.IntegerField(default=0) # - рейтинг вопроса (число)
-    author = models.ForeignKey(User, on_delete=models.CASCADE) # - автор вопроса
-    likes = models.ManyToManyField(User, related_name='question_like_user') # - список пользователей, поставивших "лайк"
+    title = models.CharField(max_length=255)
+    text = models.TextField()
+    added_at = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField(default=0)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='question_like_user')
     objects = QuestionManager() 
 
 class Answer(models.Model):
-    text = models.TextField() # - текст ответа
-    added_at = models.DateTimeField(auto_now_add=True) # - дата добавления ответа
-    question = models.ForeignKey(Question, on_delete=models.CASCADE) # - вопрос, к которому относится ответ
-    author = models.ForeignKey(User, on_delete=models.CASCADE) # - автор ответа
+    text = models.TextField()
+    added_at = models.DateTimeField(auto_now_add=True)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
