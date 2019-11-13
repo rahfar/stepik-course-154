@@ -1,6 +1,7 @@
 Django==2.0
 gunicorn==19.6.0
 mysql-connector-python==8.0.18
+mysqlclient==1.4.5
 pep8==1.7.1
 protobuf==3.10.0
 pytz==2019.2

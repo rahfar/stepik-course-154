@@ -2,6 +2,6 @@
 __pycache__/
 *.sqlite3
 *.log
-py3.7/
+pyenv/
 .idea/
 ask/qa/migrations/
