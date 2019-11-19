@@ -79,11 +79,10 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'mydb',
         'USER': 'box',
-        'PASSWORD': 'Ab123456',
-        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        'PASSWORD': 'Ab123456'
     }
 }
 

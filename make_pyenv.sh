@@ -1,5 +1,5 @@
-#!/bin/bash
-sudo apt-get install python3-dev
+#!/bin/bash -x
+sudo apt-get install libmysqlclient-dev
 virtualenv -p python3 pyenv
 source pyenv/bin/activate
 pip install --upgrade pip
