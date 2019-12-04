@@ -1,7 +1,8 @@
 Django==2.0.12
 gunicorn==19.6.0
 mysql-connector-python==8.0.18
-mysqlclient==1.3.14
+mysqlclient==1.3.14 
+# also need to 'sudo apt-get install python-dev default-libmysqlclient-dev'
 pep8==1.7.1
 protobuf==3.10.0
 pytz==2019.2
