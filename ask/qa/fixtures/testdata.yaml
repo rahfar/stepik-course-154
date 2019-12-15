@@ -1,4 +1,4 @@
-- model: qa.User
+- model: auth.User
   pk: 1
   fields:
     password: qwerty
