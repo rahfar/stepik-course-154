@@ -26,7 +26,7 @@
   pk: 1
   fields: 
     text: 'qwertyu'
-    added_at: 
+    added_at: '2019-12-15 19:31:03'
     author_id: 2
     question_id: 1
 - model: qa.Question
