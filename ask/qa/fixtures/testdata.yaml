@@ -24,7 +24,7 @@
     date_joined: '2019-12-15 19:31:03'
 - model: qa.Answer
   pk: 1
-  fields: '2019-12-15 19:31:03'
+  fields: 
     text: 'qwertyu'
     added_at: 
     author_id: 2
