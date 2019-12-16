@@ -19,11 +19,11 @@ from qa.models import Question, Answer
 # ]
 def paginate(request, qs):
     try:
-        limit = int(request.GET.get('limit', 10))
+        limit = int(request.GET.get('limit', 5))
     except ValueError:
-        limit = 10
+        limit = 5
     if limit > 100:
-        limit = 10
+        limit = 5
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
