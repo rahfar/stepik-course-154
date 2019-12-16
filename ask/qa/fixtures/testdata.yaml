@@ -1,39 +1,408 @@
+
 - model: auth.User
   pk: 1
   fields:
-    password: qwerty
+    password: password1
     is_superuser: 0
-    username: John
-    first_name: John
-    last_name: Lennon
-    email: john.lennon@beatles.com
+    username: username1
+    first_name: first_name1
+    last_name: last_name1
+    email: email@email.com
     is_staff: 0
     is_active: 0
-    date_joined: '2019-12-15 19:31:03'
+    date_joined: '2019-12-15 19:31:03'      
+      
+
 - model: auth.User
   pk: 2
   fields:
-    password: qwerty
+    password: password2
     is_superuser: 0
-    username: Paul
-    first_name: Paul
-    last_name: McCartney
-    email: paul.mccartney@beatles.com
+    username: username2
+    first_name: first_name2
+    last_name: last_name2
+    email: email@email.com
     is_staff: 0
     is_active: 0
-    date_joined: '2019-12-15 19:31:03'
-- model: qa.Answer
-  pk: 1
-  fields: 
-    text: 'qwertyu'
-    added_at: '2019-12-15 19:31:03'
-    author_id: 2
-    question_id: 1
+    date_joined: '2019-12-15 19:31:03'      
+      
+
 - model: qa.Question
   pk: 1
   fields:    
-    title: 'qwertyu'
-    text: 'qwertyu'
+    title: 'Question1'
+    text: 'text1'
+    added_at: '2019-12-15 19:31:03'
+    rating: 4
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 2
+  fields:    
+    title: 'Question2'
+    text: 'text2'
     added_at: '2019-12-15 19:31:03'
     rating: 0
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 3
+  fields:    
+    title: 'Question3'
+    text: 'text3'
+    added_at: '2019-12-15 19:31:03'
+    rating: 1
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 4
+  fields:    
+    title: 'Question4'
+    text: 'text4'
+    added_at: '2019-12-15 19:31:03'
+    rating: 7
     author_id: 1
+        
+
+- model: qa.Question
+  pk: 5
+  fields:    
+    title: 'Question5'
+    text: 'text5'
+    added_at: '2019-12-15 19:31:03'
+    rating: 6
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 6
+  fields:    
+    title: 'Question6'
+    text: 'text6'
+    added_at: '2019-12-15 19:31:03'
+    rating: 9
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 7
+  fields:    
+    title: 'Question7'
+    text: 'text7'
+    added_at: '2019-12-15 19:31:03'
+    rating: 4
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 8
+  fields:    
+    title: 'Question8'
+    text: 'text8'
+    added_at: '2019-12-15 19:31:03'
+    rating: 6
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 9
+  fields:    
+    title: 'Question9'
+    text: 'text9'
+    added_at: '2019-12-15 19:31:03'
+    rating: 3
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 10
+  fields:    
+    title: 'Question10'
+    text: 'text10'
+    added_at: '2019-12-15 19:31:03'
+    rating: 1
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 11
+  fields:    
+    title: 'Question11'
+    text: 'text11'
+    added_at: '2019-12-15 19:31:03'
+    rating: 5
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 12
+  fields:    
+    title: 'Question12'
+    text: 'text12'
+    added_at: '2019-12-15 19:31:03'
+    rating: 1
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 13
+  fields:    
+    title: 'Question13'
+    text: 'text13'
+    added_at: '2019-12-15 19:31:03'
+    rating: 9
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 14
+  fields:    
+    title: 'Question14'
+    text: 'text14'
+    added_at: '2019-12-15 19:31:03'
+    rating: 5
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 15
+  fields:    
+    title: 'Question15'
+    text: 'text15'
+    added_at: '2019-12-15 19:31:03'
+    rating: 9
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 16
+  fields:    
+    title: 'Question16'
+    text: 'text16'
+    added_at: '2019-12-15 19:31:03'
+    rating: 4
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 17
+  fields:    
+    title: 'Question17'
+    text: 'text17'
+    added_at: '2019-12-15 19:31:03'
+    rating: 10
+    author_id: 1
+        
+
+- model: qa.Question
+  pk: 18
+  fields:    
+    title: 'Question18'
+    text: 'text18'
+    added_at: '2019-12-15 19:31:03'
+    rating: 8
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 19
+  fields:    
+    title: 'Question19'
+    text: 'text19'
+    added_at: '2019-12-15 19:31:03'
+    rating: 9
+    author_id: 2
+        
+
+- model: qa.Question
+  pk: 20
+  fields:    
+    title: 'Question20'
+    text: 'text20'
+    added_at: '2019-12-15 19:31:03'
+    rating: 1
+    author_id: 2
+        
+
+- model: qa.Answer
+pk: 1
+fields: 
+    text: 'Answer1'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 10
+        
+
+- model: qa.Answer
+pk: 2
+fields: 
+    text: 'Answer2'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 10
+        
+
+- model: qa.Answer
+pk: 3
+fields: 
+    text: 'Answer3'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 13
+        
+
+- model: qa.Answer
+pk: 4
+fields: 
+    text: 'Answer4'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 15
+        
+
+- model: qa.Answer
+pk: 5
+fields: 
+    text: 'Answer5'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 13
+        
+
+- model: qa.Answer
+pk: 6
+fields: 
+    text: 'Answer6'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 16
+        
+
+- model: qa.Answer
+pk: 7
+fields: 
+    text: 'Answer7'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 17
+        
+
+- model: qa.Answer
+pk: 8
+fields: 
+    text: 'Answer8'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 15
+        
+
+- model: qa.Answer
+pk: 9
+fields: 
+    text: 'Answer9'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 3
+        
+
+- model: qa.Answer
+pk: 10
+fields: 
+    text: 'Answer10'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 17
+        
+
+- model: qa.Answer
+pk: 11
+fields: 
+    text: 'Answer11'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 11
+        
+
+- model: qa.Answer
+pk: 12
+fields: 
+    text: 'Answer12'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 3
+        
+
+- model: qa.Answer
+pk: 13
+fields: 
+    text: 'Answer13'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 14
+        
+
+- model: qa.Answer
+pk: 14
+fields: 
+    text: 'Answer14'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 9
+        
+
+- model: qa.Answer
+pk: 15
+fields: 
+    text: 'Answer15'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 2
+        
+
+- model: qa.Answer
+pk: 16
+fields: 
+    text: 'Answer16'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 5
+        
+
+- model: qa.Answer
+pk: 17
+fields: 
+    text: 'Answer17'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 1
+    question_id: 14
+        
+
+- model: qa.Answer
+pk: 18
+fields: 
+    text: 'Answer18'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 18
+        
+
+- model: qa.Answer
+pk: 19
+fields: 
+    text: 'Answer19'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 13
+        
+
+- model: qa.Answer
+pk: 20
+fields: 
+    text: 'Answer20'
+    added_at: '2019-12-15 19:31:03'
+    author_id: 2
+    question_id: 19
+        
