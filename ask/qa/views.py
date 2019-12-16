@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage
 # Create your views here.
-from django.http import HttpResponse, Http404, EmptyPage
+from django.http import HttpResponse, Http404
 from qa.models import Question, Answer
 
 
