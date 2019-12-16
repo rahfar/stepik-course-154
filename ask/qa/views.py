@@ -38,7 +38,7 @@ def paginate(request, qs):
 
 @require_GET
 def main(request):
-    questions = paginate(request, Question.objects.new())
+    questions = paginate(request, Question.objects.popular())
     return render(request, 'main.html', {
         'questions': questions
     })
