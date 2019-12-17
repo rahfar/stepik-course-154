@@ -6,24 +6,13 @@ from django.http import HttpResponse, Http404
 from qa.models import Question, Answer
 
 
-# posts = [
-#     {
-#         'title': 'first',
-#         'author': 'Fred',
-#         'flg': 123
-#     },
-#     {
-#         'title': 'second',
-#         'author': 'Ann'
-#     }
-# ]
 def paginate(request, qs):
     try:
-        limit = int(request.GET.get('limit', 5))
+        limit = int(request.GET.get('limit', 10))
     except ValueError:
-        limit = 5
+        limit = 10
     if limit > 100:
-        limit = 5
+        limit = 10
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
@@ -38,7 +27,7 @@ def paginate(request, qs):
 
 @require_GET
 def main(request):
-    questions = paginate(request, Question.objects.popular())
+    questions = paginate(request, Question.objects.new())
     return render(request, 'main.html', {
         'questions': questions
     })
