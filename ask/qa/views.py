@@ -26,23 +26,29 @@ def paginate(request, qs):
 
 
 @require_GET
-def main(request):
+def new(request):
     questions = paginate(request, Question.objects.new())
-    return render(request, 'main.html', {
+    return render(request, 'new.html', {
         'questions': questions
     })
 
 
 @require_GET
 def popular(request):
-    return HttpResponse('OK')
+    questions = paginate(request, Question.objects.popular())
+    return render(request, 'popular.html', {
+        'questions': questions
+    })
+
 
 
 @require_GET
 def question(request, qnum):
     question = get_object_or_404(Question, id=qnum)
+    answers = Answer.objects.filter(question=qnum).all()
     return render(request, 'question.html', {
-        'question': question
+        'question': question,
+        'answers': answers
     })
 
 
