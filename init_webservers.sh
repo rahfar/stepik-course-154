@@ -4,6 +4,4 @@ sudo nginx -c "/home/${USER}/web/config/nginx.conf" &&
 cd ask && 
 gunicorn \
     --bind="0.0.0.0:8000" \
-    # --daemon \
-    # --pid "/home/${USER}/web/gunicorn.pid" \
     ask.wsgi
