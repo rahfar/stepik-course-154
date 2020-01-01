@@ -41,7 +41,6 @@ def popular(request):
     })
 
 
-
 @require_GET
 def question(request, qnum):
     question = get_object_or_404(Question, id=qnum)
