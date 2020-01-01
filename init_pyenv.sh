@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 cd /home/${USER}/web/
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install python-dev default-libmysqlclient-dev
