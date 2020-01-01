@@ -20,7 +20,7 @@ urlpatterns = [
     path('', new),
     path('login/', test),
     path('signup/', test),
-    path('question/<int:qnum>', question, name='question'),
+    path('question/<int:qnum>/', question, name='question'),
     path('ask/', test),
     path('popular/', popular)
 ]
