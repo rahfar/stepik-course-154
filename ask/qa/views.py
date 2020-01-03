@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, EmptyPage
 # Create your views here.
 from django.http import HttpResponse, Http404
 from qa.models import Question, Answer
+from qa.forms import AskForm, AnswerForm
 
 
 def paginate(request, qs):
@@ -50,6 +51,15 @@ def question(request, qnum):
         'answers': answers
     })
 
+
+def ask(request):
+    if request.method == 'POST':
+        form = AskForm()
+    else:
+        form = AskForm()
+    return render(request, 'ask.html', {
+        'form': form
+    })
 
 def test(request, *args, **kwargs):
     return HttpResponse('OK')
