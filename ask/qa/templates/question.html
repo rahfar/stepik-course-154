@@ -7,6 +7,15 @@
 <h2>{{ ans.author }}</h2>
 <p>{{ ans.text }}</p>
 {% endfor %}
+
+<form class="form-horizontal" method="post" action="/question/{{ question.id }}/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>
+
 {% endblock content %}
 
 {% block title %}
