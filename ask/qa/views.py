@@ -7,7 +7,8 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from qa.models import Question, Answer
 from qa.forms import AskForm, AnswerForm, SignUpForm
 from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 
 def paginate(request, qs):
     try:
@@ -90,7 +91,7 @@ def signup(request):
         if form.is_valid():
             url = reverse('home')
             user = form.save()
-            login(request, user)
+            auth_login(request, user)
             return HttpResponseRedirect(url)
     else:
         form = SignUpForm()
@@ -98,13 +99,13 @@ def signup(request):
         'form': form
     })
 
-def sigin(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            auth_login(request, user)
             url = reverse('home')
             return HttpResponseRedirect(url)
         else:
