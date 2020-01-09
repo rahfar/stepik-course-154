@@ -1,11 +1,13 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator, EmptyPage
 # Create your views here.
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from qa.models import Question, Answer
-from qa.forms import AskForm, AnswerForm
-
+from qa.forms import AskForm, AnswerForm, SignUpForm
+from django.urls import reverse
+from django.contrib.auth import authenticate, login
 
 def paginate(request, qs):
     try:
@@ -47,6 +49,7 @@ def question(request, qnum):
     answers = Answer.objects.filter(question=qnum).all()
     if request.method == 'POST':
         form = AnswerForm(request.POST)
+        form._user = request.user
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(question.get_url())
@@ -69,6 +72,7 @@ def question(request, qnum):
 def ask(request):
     if request.method == 'POST':
         form = AskForm(request.POST)
+        form._user = request.user
         if form.is_valid():
             question = form.save()
             url = question.get_url()
@@ -76,6 +80,38 @@ def ask(request):
     else:
         form = AskForm()
     return render(request, 'ask.html', {
+        'form': form
+    })
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            url = reverse('home')
+            user = form.save()
+            login(request, user)
+            return HttpResponseRedirect(url)
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {
+        'form': form
+    })
+
+def sigin(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            url = reverse('home')
+            return HttpResponseRedirect(url)
+        else:
+            form = AuthenticationForm(request.POST) 
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {
         'form': form
     })
 

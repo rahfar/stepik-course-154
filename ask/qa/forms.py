@@ -5,13 +5,9 @@ from django.contrib.auth.models import User
 class AskForm(forms.Form):
     title = forms.CharField(max_length=255)
     text = forms.CharField()
-    
-    def clean(self):
-        pass
 
     def save(self):
-        question = Question(**self.cleaned_data)
-        question.author_id = 1
+        question = Question(author = self._user, **self.cleaned_data)
         question.save()
         return question
 
@@ -19,11 +15,18 @@ class AnswerForm(forms.Form):
     text = forms.CharField()
     question = forms.ModelChoiceField(queryset=Question.objects.all())
 
-    def clean(self):
-        pass
-
     def save(self):
-        answer = Answer(**self.cleaned_data)
-        answer.author_id = 1
+        answer = Answer(author = self._user, **self.cleaned_data)
         answer.save()
         return answer
+
+
+class SignUpForm(forms.Form):
+    username = forms.CharField(max_length=150)
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    def save(self):
+        user = User.objects.create_user(**self.cleaned_data)
+        user.save()
+        return user

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="form-horizontal" method="post" action="/signup/">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </div>
+</form>
+{% endblock content %}
+
+{% block title %}
+    SignUp
+{% endblock title %}
